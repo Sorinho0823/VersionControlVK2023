@@ -33,6 +33,7 @@ namespace UserMaintenance
             this.listBox = new System.Windows.Forms.ListBox();
             this.textBoxFullName = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonfile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelFullName
@@ -70,11 +71,22 @@ namespace UserMaintenance
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
+            // buttonfile
+            // 
+            this.buttonfile.Location = new System.Drawing.Point(290, 277);
+            this.buttonfile.Name = "buttonfile";
+            this.buttonfile.Size = new System.Drawing.Size(202, 51);
+            this.buttonfile.TabIndex = 5;
+            this.buttonfile.Text = "button1";
+            this.buttonfile.UseVisualStyleBackColor = true;
+            this.buttonfile.Click += new System.EventHandler(this.buttonfile_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 446);
+            this.Controls.Add(this.buttonfile);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxFullName);
             this.Controls.Add(this.listBox);
@@ -91,6 +103,7 @@ namespace UserMaintenance
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.TextBox textBoxFullName;
         private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonfile;
     }
 }
 
