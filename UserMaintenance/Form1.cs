@@ -33,6 +33,8 @@ namespace UserMaintenance
             u.LastName = textBoxLastName.Text;
             u.FirstName = textBoxfirstname.Text;
             users.Add(u);
+            textBoxfirstname.Clear();
+            textBoxLastName.Clear();
         
         
         }
