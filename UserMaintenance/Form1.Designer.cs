@@ -34,6 +34,7 @@ namespace UserMaintenance
             this.textBoxFullName = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonfile = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelFullName
@@ -63,7 +64,7 @@ namespace UserMaintenance
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(290, 180);
+            this.buttonAdd.Location = new System.Drawing.Point(290, 114);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(202, 51);
             this.buttonAdd.TabIndex = 3;
@@ -73,7 +74,7 @@ namespace UserMaintenance
             // 
             // buttonfile
             // 
-            this.buttonfile.Location = new System.Drawing.Point(290, 277);
+            this.buttonfile.Location = new System.Drawing.Point(290, 309);
             this.buttonfile.Name = "buttonfile";
             this.buttonfile.Size = new System.Drawing.Size(202, 51);
             this.buttonfile.TabIndex = 5;
@@ -81,11 +82,22 @@ namespace UserMaintenance
             this.buttonfile.UseVisualStyleBackColor = true;
             this.buttonfile.Click += new System.EventHandler(this.buttonfile_Click);
             // 
+            // buttonDel
+            // 
+            this.buttonDel.Location = new System.Drawing.Point(290, 178);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Size = new System.Drawing.Size(202, 51);
+            this.buttonDel.TabIndex = 6;
+            this.buttonDel.Text = "button1";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 446);
+            this.Controls.Add(this.buttonDel);
             this.Controls.Add(this.buttonfile);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.textBoxFullName);
@@ -104,6 +116,7 @@ namespace UserMaintenance
         private System.Windows.Forms.TextBox textBoxFullName;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonfile;
+        private System.Windows.Forms.Button buttonDel;
     }
 }
 

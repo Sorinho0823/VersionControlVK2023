@@ -21,6 +21,7 @@ namespace UserMaintenance
             labelFullName.Text = Resource1.Fullname;
             buttonAdd.Text = Resource1.Add;
             buttonfile.Text = Resource1.File;
+            buttonDel.Text = Resource1.Delete;
 
             listBox.DataSource = users;
             listBox.ValueMember = "ID";
@@ -34,8 +35,8 @@ namespace UserMaintenance
             u.FullName = textBoxFullName.Text;
             users.Add(u);
             textBoxFullName.Clear();
-        
-        
+
+
         }
 
         private void buttonfile_Click(object sender, EventArgs e)
@@ -51,11 +52,19 @@ namespace UserMaintenance
                 foreach (User item in users)
                 {
                     sw.WriteLine(item.ID + "," + item.FullName);
-                }               
-                
+                }
+
                 sw.Close();     // ha van using akkor ez nem kell
 
             }
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+
+            User kivalasztott = (User)listBox.SelectedItem;
+            users.Remove(kivalasztott);
+
         }
     }
 }
