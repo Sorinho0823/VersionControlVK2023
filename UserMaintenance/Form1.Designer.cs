@@ -33,14 +33,14 @@ namespace UserMaintenance
             this.labelLastName = new System.Windows.Forms.Label();
             this.listBox = new System.Windows.Forms.ListBox();
             this.textBoxfirstname = new System.Windows.Forms.TextBox();
-            this.textBoxSurName = new System.Windows.Forms.TextBox();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelfirstname
             // 
             this.labelfirstname.AutoSize = true;
-            this.labelfirstname.Location = new System.Drawing.Point(287, 68);
+            this.labelfirstname.Location = new System.Drawing.Point(287, 116);
             this.labelfirstname.Name = "labelfirstname";
             this.labelfirstname.Size = new System.Drawing.Size(46, 17);
             this.labelfirstname.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace UserMaintenance
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(287, 105);
+            this.labelLastName.Location = new System.Drawing.Point(287, 68);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(46, 17);
             this.labelLastName.TabIndex = 1;
@@ -62,30 +62,31 @@ namespace UserMaintenance
             this.listBox.Location = new System.Drawing.Point(66, 68);
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(164, 292);
-            this.listBox.TabIndex = 2;
+            this.listBox.TabIndex = 4;
             // 
             // textBoxfirstname
             // 
-            this.textBoxfirstname.Location = new System.Drawing.Point(392, 68);
+            this.textBoxfirstname.Location = new System.Drawing.Point(392, 111);
             this.textBoxfirstname.Name = "textBoxfirstname";
             this.textBoxfirstname.Size = new System.Drawing.Size(100, 22);
-            this.textBoxfirstname.TabIndex = 3;
+            this.textBoxfirstname.TabIndex = 2;
             // 
-            // textBoxSurName
+            // textBoxLastName
             // 
-            this.textBoxSurName.Location = new System.Drawing.Point(392, 105);
-            this.textBoxSurName.Name = "textBoxSurName";
-            this.textBoxSurName.Size = new System.Drawing.Size(100, 22);
-            this.textBoxSurName.TabIndex = 4;
+            this.textBoxLastName.Location = new System.Drawing.Point(392, 68);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(100, 22);
+            this.textBoxLastName.TabIndex = 1;
             // 
             // buttonAdd
             // 
             this.buttonAdd.Location = new System.Drawing.Point(290, 180);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(202, 51);
-            this.buttonAdd.TabIndex = 5;
+            this.buttonAdd.TabIndex = 3;
             this.buttonAdd.Text = "button1";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // Form1
             // 
@@ -93,7 +94,7 @@ namespace UserMaintenance
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 446);
             this.Controls.Add(this.buttonAdd);
-            this.Controls.Add(this.textBoxSurName);
+            this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxfirstname);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.labelLastName);
@@ -111,7 +112,7 @@ namespace UserMaintenance
         private System.Windows.Forms.Label labelLastName;
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.TextBox textBoxfirstname;
-        private System.Windows.Forms.TextBox textBoxSurName;
+        private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.Button buttonAdd;
     }
 }
