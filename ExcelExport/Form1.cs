@@ -84,7 +84,7 @@ namespace ExcelExport
                 values[counter, 5] = item.NumberOfRooms;
                 values[counter, 6] = item.FloorArea;
                 values[counter, 7] = item.Price;
-                values[counter, 8] = "="+GetCell(counter+2,8)+ "1000000/"+ GetCell(counter+2,7);
+                values[counter, 8] = "=" + GetCell(counter + 2, 8) + "*1000000/" + GetCell(counter + 2, 7);
                 counter++;
 
             }
@@ -92,7 +92,9 @@ namespace ExcelExport
             GetCell(2, 1),
             GetCell(1 + values.GetLength(0), values.GetLength(1))).Value2 = values;
 
-            Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, headers.Length));
+            int lastRowID = xlSheet.UsedRange.Rows.Count; // ezzel megkapjuk az utolso sort
+
+            Excel.Range headerRange = xlSheet.get_Range(GetCell(1, 1), GetCell(1, headers.Length)); // ez a fejlécnek 
             headerRange.Font.Bold = true;
             headerRange.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
             headerRange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
@@ -100,6 +102,24 @@ namespace ExcelExport
             headerRange.RowHeight = 40;
             headerRange.Interior.Color = Color.Salmon;
             headerRange.BorderAround2(Excel.XlLineStyle.xlDashDotDot, Excel.XlBorderWeight.xlThick);
+
+            //a, fealadat
+            //eglsz táblának legyen körbe szegélye
+            Excel.Range EgeszTablaRange = xlSheet.get_Range(GetCell(1, 1), GetCell(lastRowID, headers.Length)); //ahány flat sor van
+            EgeszTablaRange.BorderAround2(Excel.XlLineStyle.xlDouble);
+            // b fealadat
+            //1. oszlop adatai legyenek félköverek, hattér halvány sárga
+            Excel.Range ElsoOszlopRange = xlSheet.get_Range(GetCell(1, 1), GetCell(lastRowID, 1));
+            ElsoOszlopRange.Font.Bold = true;
+            ElsoOszlopRange.Interior.Color = Color.LightYellow;
+            //c. feladat
+            // Az utolsó oszlop adatainak háttere legyen halványzöld.
+            Excel.Range UtolsoOszlopRange = xlSheet.get_Range(GetCell(1, headers.Length), GetCell(lastRowID, headers.Length));
+            UtolsoOszlopRange.Interior.Color = Color.LightGreen;
+            //d, Az utolsó oszlop adatai két tizedesre kerekített formában jelenjenek meg.
+            UtolsoOszlopRange.NumberFormat(0.00);
+
+
 
         }
 
