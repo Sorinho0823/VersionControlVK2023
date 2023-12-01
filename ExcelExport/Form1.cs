@@ -117,7 +117,7 @@ namespace ExcelExport
             Excel.Range UtolsoOszlopRange = xlSheet.get_Range(GetCell(1, headers.Length), GetCell(lastRowID, headers.Length));
             UtolsoOszlopRange.Interior.Color = Color.LightGreen;
             //d, Az utolsó oszlop adatai két tizedesre kerekített formában jelenjenek meg.
-            UtolsoOszlopRange.NumberFormat(0.00);
+            UtolsoOszlopRange.NumberFormat="0.00";  
 
 
 
